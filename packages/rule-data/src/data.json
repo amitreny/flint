@@ -21090,6 +21090,25 @@
 	},
 	{
 		"flint": {
+			"name": "generatedEmptyObjectTypes",
+			"plugin": "ts",
+			"preset": "logicalStrict"
+		},
+		"eslint": [
+			{
+				"name": "@typescript-eslint/no-generated-empty-object-type",
+				"url": "https://typescript-eslint.io/rules/no-generated-empty-object-type"
+			}
+		],
+		"oxlint": [
+			{
+				"name": "typescript/no-generated-empty-object-type",
+				"url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-generated-empty-object-type.html"
+			}
+		]
+	},
+	{
+		"flint": {
 			"name": "generatorFunctionYields",
 			"plugin": "ts",
 			"preset": "logical",
