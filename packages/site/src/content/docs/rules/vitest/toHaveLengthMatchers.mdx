@@ -54,6 +54,10 @@ expect(files).not.toHaveLength(0);
 expect(files.length).toBeGreaterThan(1);
 ```
 
+```ts
+expect(files?.length).toBe(1);
+```
+
 </TabItem>
 </Tabs>
 
@@ -64,7 +68,6 @@ This rule is not configurable.
 ## When Not To Use It
 
 If your tests compare `.length` against an asymmetric matcher, such as `expect(files.length).toEqual(expect.any(Number))`, this rule's fix changes the result of the assertion, because `toHaveLength()` only accepts a number.
-If a large existing test suite already asserts on `.length` consistently and you don't want to rewrite it, you might also prefer to leave this rule off.
 
 ## Further Reading
 

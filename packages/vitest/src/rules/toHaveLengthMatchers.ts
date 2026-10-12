@@ -46,12 +46,13 @@ export default ruleCreator.createRule(typescriptLanguage, {
 						return;
 					}
 
-					const received = getExpectCall(matcher.expression)?.arguments[0];
+					const expectArgument = getExpectCall(matcher.expression)
+						?.arguments[0];
 					if (
-						!received ||
-						!isAccessExpression(received) ||
-						getAccessedName(received) !== "length" ||
-						isOptionalChain(received)
+						!expectArgument ||
+						!isAccessExpression(expectArgument) ||
+						getAccessedName(expectArgument) !== "length" ||
+						isOptionalChain(expectArgument)
 					) {
 						return;
 					}
@@ -60,8 +61,8 @@ export default ruleCreator.createRule(typescriptLanguage, {
 						fix: [
 							{
 								range: {
-									begin: received.expression.getEnd(),
-									end: received.getEnd(),
+									begin: expectArgument.expression.getEnd(),
+									end: expectArgument.getEnd(),
 								},
 								text: "",
 							},
